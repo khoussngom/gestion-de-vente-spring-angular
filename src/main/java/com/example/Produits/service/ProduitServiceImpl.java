@@ -54,7 +54,7 @@ public class ProduitServiceImpl implements ProduitService{
 	@Override
 	public List<Produits> getAllProduits() {
 		// TODO Auto-generated method stub
-		return null;
+		return produitRepositery.findAll();
 	}
 
 	@Override

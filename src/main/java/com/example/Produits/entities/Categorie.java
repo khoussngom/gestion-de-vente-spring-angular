@@ -1,6 +1,7 @@
 package com.example.Produits.entities;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -11,8 +12,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 @Entity
 public class Categorie {
 
@@ -25,6 +24,7 @@ public class Categorie {
     private String descriptionCat;
 
     @OneToMany(mappedBy = "categorie")
+    @JsonIgnore
     private List<Produits> produits;
 
 
