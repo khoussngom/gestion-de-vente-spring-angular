@@ -2,6 +2,7 @@ package com.example.Produits.service;
 
 import java.util.List;
 
+import com.example.Produits.entities.Categorie;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -54,6 +55,41 @@ public class ProduitServiceImpl implements ProduitService{
 	public List<Produits> getAllProduits() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public List<Produits> findByNomProduit(String nom) {
+		return produitRepositery.findByNomProduit(nom);
+	}
+
+	@Override
+	public List<Produits> findByNomProduitContains(String nom) {
+		return produitRepositery.findByNomProduitContains(nom);
+	}
+
+	@Override
+	public List<Produits> findByNomPrix(String nom, Double prix) {
+		return produitRepositery.findByNomPrix(nom, prix);
+	}
+
+	@Override
+	public List<Produits> findByCategorie(Categorie categorie) {
+		return produitRepositery.findByCategorie(categorie);
+	}
+
+	@Override
+	public List<Produits> findByCategorieIdCat(Long id) {
+		return produitRepositery.findByCategorieIdCat(id);
+	}
+
+	@Override
+	public List<Produits> findByOrderByNomProduitAsc() {
+		return produitRepositery.findByOrderByNomProduitAsc();
+	}
+
+	@Override
+	public List<Produits> trierProduitsNomsPrix() {
+		return produitRepositery.trierProduitsNomsPrix();
 	}
 
 }

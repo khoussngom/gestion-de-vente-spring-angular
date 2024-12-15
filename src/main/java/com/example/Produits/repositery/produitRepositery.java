@@ -28,4 +28,7 @@ public interface produitRepositery extends JpaRepository<Produits, Long> {
 
 
 	List<Produits> findByOrderByNomProduitAsc();
+
+	@Query("select p from Produits p order by p.nomProduit ASC, p.prixProduit DESC")
+	List<Produits> trierProduitsNomsPrix ();
 }

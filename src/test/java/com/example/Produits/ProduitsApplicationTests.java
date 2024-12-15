@@ -97,6 +97,25 @@ class ProduitsApplicationTests {
 	     System.out.println(p);
 	   }
 	}
-	
-	
+
+	@Test
+	public void findByOrderByNomProduitAsc()
+	{
+	  List<Produits> prods = produitRepositery.findByOrderByNomProduitAsc();
+	  for (Produits p : prods)
+	   {
+	     System.out.println(p);
+	   }
+	}
+
+	@Test
+	public void testTrierProduitsNomsPrix()
+	{
+		List<Produits> prods = produitRepositery.trierProduitsNomsPrix();
+		for (Produits p : prods)
+		{
+			System.out.println(p);
+		}
+
+	}
 }
