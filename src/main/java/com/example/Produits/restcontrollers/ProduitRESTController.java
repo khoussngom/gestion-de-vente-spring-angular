@@ -26,4 +26,10 @@ public class ProduitRESTController {
     public Produits getProduitById(@PathVariable("id") Long id) {
         return produitService.getProduit(id);
     }
+
+    @RequestMapping(method = RequestMethod.POST)
+    public Produits createProduit(@RequestBody Produits produit) {
+        return produitService.saveProduit(produit);
+    }
+
 }
