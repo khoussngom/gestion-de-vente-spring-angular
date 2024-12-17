@@ -4,10 +4,7 @@ package com.example.Produits.restcontrollers;
 import com.example.Produits.entities.Produits;
 import com.example.Produits.service.ProduitService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,8 +17,13 @@ public class ProduitRESTController {
     ProduitService produitService;
 
     @RequestMapping(method = RequestMethod.GET)
-    List<Produits> getAllProduits()
+    public List<Produits> getAllProduits()
     {
         return produitService.getAllProduits();
+    }
+
+    @RequestMapping(value="/{id}",method = RequestMethod.GET)
+    public Produits getProduitById(@PathVariable("id") Long id) {
+        return produitService.getProduit(id);
     }
 }
